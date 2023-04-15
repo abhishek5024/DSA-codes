@@ -1,0 +1,9 @@
+int MissingNumber(vector<int>& array, int n) {
+        int total = (n * (n +1))/ 2;
+        int total2=0;
+    for (int i = 0;i<array.size();i++){
+        total2 += array[i];
+    }
+        total=total-total2;
+       return total;
+    }
