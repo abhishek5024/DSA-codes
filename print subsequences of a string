@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+void printsubquences(string str, string output, int i)
+{
+
+  if(i>=str.length())
+  {
+    cout<<output<<" ";
+    return;
+  }
+  printsubquences(str, output, i+1);
+
+  output.push_back(str[i]);
+  printsubquences(str, output, i+1);
+
+}
+
+int main() {
+  string str ="abc";
+  
+  int i =0;
+  string output="";
+  
+  printsubquences(str, output, i);
+  return 0;
+}
