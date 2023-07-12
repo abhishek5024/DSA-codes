@@ -1,0 +1,24 @@
+ //code here.
+        /*int zor=0;
+        for(int i=0;i<n;i++)
+        {
+            zor^=arr[i];
+        }
+        return zor;*/
+        int s=0,e=n-1;
+        while(s<e)
+        {
+            int mid=(s+e)/2;
+            if(mid%2==0)
+            {
+               if(arr[mid]==arr[mid+1]  && mid<n )   s=mid+1;
+               else   e=mid;
+            }
+            else
+            {
+               if(arr[mid]==arr[mid-1])s=mid+1;
+               else e=mid;
+            }
+        }
+        return arr[s];
+    }
