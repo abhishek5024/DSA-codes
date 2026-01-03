@@ -1,0 +1,31 @@
+Diameter of a Binary Tree
+
+class Solution {
+
+    public int maxDepth(TreeNode root) {
+
+        if ( root == null)
+            return 0;
+        
+
+        int leftheight = maxDepth(root.left);
+        int rightheight = maxDepth(root.right);
+
+        int ans = Math.max(leftheight, rightheight) + 1;
+
+        return ans;
+        
+    }
+    public int diameterOfBinaryTree(TreeNode root) {
+
+        if ( root == null)
+        return 0;
+
+        int opt1 = diameterOfBinaryTree(root.left);
+        int opt2 = diameterOfBinaryTree(root.right);
+        int opt3 = maxDepth(root.left)  + maxDepth(root.right);
+
+        int ans = Math.max(opt1, Math.max(opt2, opt3));
+        return ans;
+    }
+}
