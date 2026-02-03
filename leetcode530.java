@@ -14,6 +14,7 @@
  * }
  */
 class Solution {
+    
     Integer prev = null;
     int minDiff = Integer.MAX_VALUE;
 
